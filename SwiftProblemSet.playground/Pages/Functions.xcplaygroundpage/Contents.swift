@@ -16,7 +16,8 @@ emojiLove(s1: "peanut butter", s2: "jelly") // prints "peanut butter ❤️ jell
 emojiLove(s1: "ying", s2: "yang") // prints "ying ❤️ yang"
 //: ### Exercise 15
 //: The function `median` should take three `Int` parameters and return the `Int` value in the middle.
-func median(num1: Int, num2: Int, num3: Int) -> Int {
+//Solution #1
+func medianV1(num1: Int, num2: Int, num3: Int) -> Int {
     
     var median: Int
     
@@ -31,17 +32,31 @@ func median(num1: Int, num2: Int, num3: Int) -> Int {
     return median
 }
 
+//Solution #2
+
+func median(num1: Int, num2: Int, num3: Int) -> Int {
+    
+    var median: Int
+    
+    let numbers: [Int] = [num1, num2, num3]
+    
+    numbers.sorted { return $0 < $1 }
+    
+    median = numbers[1]
+    
+    return median
+}
 /* Example Function Call
  */
- median(num1: 1, num2: 5, num3: 6) // 5
- median(num1: 2, num2: 1, num3: 4) // 2
- median(num1: 3, num2: 6, num3: 6) // 6
- median(num1: -10, num2: 10, num3: 0) // 0
- median(num1: 0, num2: 0, num3: 0) // 0
- median(num1: 2, num2: 3, num3: 1) // 2
- median(num1: 2, num2: 2, num3: 1) // 2
- 
- 
+median(num1: 1, num2: 5, num3: 6) // 5
+median(num1: 2, num2: 1, num3: 4) // 2
+median(num1: 3, num2: 6, num3: 6) // 6
+median(num1: -10, num2: 10, num3: 0) // 0
+median(num1: 0, num2: 0, num3: 0) // 0
+median(num1: 2, num2: 3, num3: 1) // 2
+median(num1: 2, num2: 2, num3: 1) // 2
+
+
 
 /*:
  ### Exercise 16
